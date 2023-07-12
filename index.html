@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chair_demo</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32 "
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <model-viewer
+      id="sampleChair"
+      src="./assets/models/sku1.glb"
+      alt="A 3D model of a steampunk camera"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1"
+      environment-image="./assets/lighting/4_point_with plane.hdr"
+      camera-controls
+    >
+      <button
+        slot="hotspot-dot+X-Y+Z"
+        class="dot"
+        data-position="1 -1 1"
+        data-normal="1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dim+X-Y"
+        class="dim"
+        data-position="1 -1 0"
+        data-normal="1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dot+X-Y-Z"
+        class="dot"
+        data-position="1 -1 -1"
+        data-normal="1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dim+X-Z"
+        class="dim"
+        data-position="1 0 -1"
+        data-normal="1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dot+X+Y-Z"
+        class="dot"
+        data-position="1 1 -1"
+        data-normal="0 1 0"
+      ></button>
+      <button
+        slot="hotspot-dim+Y-Z"
+        class="dim"
+        data-position="0 -1 -1"
+        data-normal="0 1 0"
+      ></button>
+      <button
+        slot="hotspot-dot-X+Y-Z"
+        class="dot"
+        data-position="-1 1 -1"
+        data-normal="0 1 0"
+      ></button>
+      <button
+        slot="hotspot-dim-X-Z"
+        class="dim"
+        data-position="-1 0 -1"
+        data-normal="-1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dot-X-Y-Z"
+        class="dot"
+        data-position="-1 -1 -1"
+        data-normal="-1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dim-X-Y"
+        class="dim"
+        data-position="-1 -1 0"
+        data-normal="-1 0 0"
+      ></button>
+      <button
+        slot="hotspot-dot-X-Y+Z"
+        class="dot"
+        data-position="-1 -1 1"
+        data-normal="-1 0 0"
+      ></button>
+      <svg
+        id="dimLines"
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        class="dimensionLineContainer"
+      >
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+      </svg>
+    </model-viewer>
+    <div class="buttons1">
+      <div class="allButtons">
+        <button class="bottomButton" id="downloadBtn">Download Image</button>
+        <button class="bottomButton" id="dimensions">Dimensions</button>
+
+        <select class="dropdown" id="selectAng">
+          <option value="" disabled selected>Select angle</option>
+          <option value="side">Side</option>
+          <option value="3/4th">Front qtr</option>
+          <option value="back">Back</option>
+          <option value="backQtr">Back qtr</option>
+        </select>
+        <select class="dropdown" id="selectSKU">
+          <option value="" disabled selected>Select SKU</option>
+          <option value="option1">Tourmaline</option>
+          <option value="option2">Petal</option>
+          <option value="option3">Lemon</option>
+        </select>
+      </div>
+    </div>
+  </body>
+</html>
